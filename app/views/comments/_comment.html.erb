@@ -1,0 +1,6 @@
+  <i>Commenter:</i>
+    <%= comment.commenter %>
+  <i>Comment:</i>
+   <%= comment.body %>
+  <!-- a href="articles/comment.article/comments/comment.id/edit">Edit</a> -->
+    <%= link_to "Delete comment",[comment.article, comment] ,method: :delete,data: {confirm:'are you sure?'} %> <br>

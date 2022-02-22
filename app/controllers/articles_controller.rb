@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "secret", except: [:index, :show]
   skip_before_action :verify_authenticity_token
   def index
     @articles = Article.all
