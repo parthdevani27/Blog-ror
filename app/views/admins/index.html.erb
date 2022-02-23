@@ -1,0 +1,44 @@
+
+<h1>Admin Picture</h1><table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>pictures</th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @all.each do |article| %>
+    <tr>
+      <td><%= article.id %></td>
+      <td><%= article.name %></td>
+      <td>
+      <% article.pictures.each do |pic| %>
+      	<%= pic.name %>||
+      <% end %>
+      </td>
+     
+    </tr>
+  <% end %>
+</table>
+
+<h1>Employee Picture</h1>
+<tr>
+   <th>id</th>
+    <th>name</th>
+    <th>pictures</th>
+  </tr><br>
+ 
+  <% @allEmp.each do |article| %>
+    <tr>
+      <td><%= article.id %></td>
+      <td><%= article.name %></td>
+      <td>
+      <% article.pictures.each do |pic| %>
+      	<%= pic.name %>||
+      <% end %>
+      </td>
+     
+    </tr><br>
+  <% end %>
+</table>

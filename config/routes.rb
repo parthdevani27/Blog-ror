@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments 
   end
+  resources :products
+  # get "/product/new" ,to: "products#new"
+  get "/poly" ,to: "admins#index"
 
 end

@@ -16,13 +16,42 @@
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
+      <% if @article.errors[:title].any? %>  
+            <% @article.errors[:title].each do |msg| %>
+              <i style="color:red"><%= msg %></i>
+            <% end %>
+      <% end %>
+  </p>
+    <p>
+    <%= form.label :title_confirmation %><br>
+    <%= form.text_field :title_confirmation %><br>
+      <% if @article.errors[:title_confirmation].any? %>  
+            <% @article.errors[:title_confirmation].each do |msg| %>
+              <i style="color:red"><%= msg %></i>
+            <% end %>
+      <% end %>
   </p>
  
   <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
+      <% if @article.errors[:body].any? %>  
+        <% @article.errors[:body].each do |msg| %>
+          <i style="color:red"><%= msg %></i> <br>
+        <% end %>
+      <% end %>
   </p>
- 
+
+  <p>
+    <%= form.label :terms %>
+    <%= form.check_box :terms %>
+      <% if @article.errors[:terms].any? %>  
+        <% @article.errors[:terms].each do |msg| %>
+          <i style="color:red"><%= msg %></i> <br>
+        <% end %>
+      <% end %>
+  </p>
+
   <p>
     <%= form.submit %>
   </p>

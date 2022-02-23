@@ -1,0 +1,49 @@
+<!-- form_with scope: :article, url: articles_path, local: true do |form|  -->
+<%= form_with model: @product, local: true do |form| %>
+ 
+  <% if @product.errors.any? %>  
+      <h4>
+        <%= pluralize(@product.errors.count, "error") %> prohibited
+        this product from being saved:
+      </h4>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li style="color:red"><%= msg %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+
+  </p>
+    <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %><br>
+    
+  </p>
+ 
+
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>des</th>
+  </tr>
+ 
+  <% @products.each do |article| %>
+    <tr>
+      <td><%= article.name %></td>
+      <td><%= article.description %></td>
+      <td><%= article.description %></td>
+            <td><%= link_to "Destroy",product_path(article),method: :delete,data: {confirm: 'Are You Sure?'} %></td>
+
+    </tr>
+  <% end %>
+</table>
+ 
